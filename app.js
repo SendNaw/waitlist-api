@@ -13,10 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Signup Route
 app.post('/signup', (req, res) => {
-  const { firstName, lastName, email } = req.body;
+  const { email } = req.body;
 
   // Make sure fields are filled
-  if (!firstName || !lastName || !email) {
+  if (!email) {
     res.redirect('/fail.html');
     return;
   }
@@ -26,11 +26,7 @@ app.post('/signup', (req, res) => {
     members: [
       {
         email_address: email,
-        status: 'subscribed',
-        merge_fields: {
-          FNAME: firstName,
-          LNAME: lastName
-        }
+        status: 'subscribed'
       }
     ]
   };
