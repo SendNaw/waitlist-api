@@ -1,11 +1,10 @@
 const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
-const path = require('path');
+// const path = require('path');
 require('dotenv').config();
 const { response } = require('express');
 
-// const fetch = require('node-fetch');
 
 const app = express();
 
@@ -14,7 +13,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Static folder
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Signup Route
 app.post('/subscribe', (req, res) => {
