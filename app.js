@@ -33,7 +33,7 @@ app.post('/subscribe', (req, res) => {
   const mcDataPost = JSON.stringify(mcData);
 
   const options = {
-    url: 'https://us17.api.mailchimp.com/3.0/lists/70f1f11517',
+    url: 'https://us21.api.mailchimp.com/3.0/lists/6270c3c791',
     method: 'POST',
     headers: {
       Authorization: `auth ${process.env.API_KEY}`,
