@@ -47,11 +47,7 @@ app.post('/subscribe', (req, res) => {
       if (err) {
         res.json({ error: err });
       } else {
-        // if (js) {
-          // res.sendStatus(200);
-        // } else {
           res.redirect('/success.html');
-        // }
       }
     });
   } else {
