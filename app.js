@@ -4,9 +4,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 const { response } = require('express');
+const cors = require('cors')
 
 
 const app = express();
+app.use(cors())
 
 // Bodyparser Middleware
 app.use(express.json());
@@ -45,11 +47,7 @@ app.post('/subscribe', (req, res) => {
       if (err) {
         res.json({ error: err });
       } else {
-        if (js) {
-          res.sendStatus(200);
-        } else {
           res.redirect('/success.html');
-        }
       }
     });
   } else {
